@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f4f0;
-  --ink: #0f0f0f;
-  --ink-mid: #555;
-  --rule: #d0cec8;
+  --fern: #607744;
+  --royal-gold: #f4d35e;
+  --lavender: #cfcfea;
+  --coffee-bean: #18020c;
+  --olive-leaf: #515b3a;
+
+  --background: var(--lavender);
+  --ink: var(--coffee-bean);
+  --ink-mid: var(--olive-leaf);
+  --rule: #a8a8cc;
+  --accent: var(--fern);
 }
 
 body {

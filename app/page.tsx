@@ -44,19 +44,6 @@ const works = [
 export default function Home() {
   return (
     <div>
-      {/* Hero */}
-      <div
-        className="px-6 md:px-12 py-16 border-b overflow-hidden"
-        style={{ borderColor: "var(--rule)" }}
-      >
-        <h1
-          className="text-[18vw] leading-none font-black uppercase tracking-tight"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Lian Benz
-        </h1>
-      </div>
-
       {/* Works list */}
       <div>
         {works.map((work, i) => (
@@ -71,14 +58,14 @@ export default function Home() {
             <div className="px-6 md:px-12 py-10 md:py-14">
               {/* Big title */}
               <h2
-                className="text-[8vw] md:text-[6vw] leading-none font-black uppercase tracking-tight mb-1 transition-opacity group-hover:opacity-60"
+                className="text-[8vw] md:text-[6vw] leading-none font-black uppercase tracking-tight mb-1 transition-colors group-hover:text-[var(--accent)]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {work.title}
               </h2>
               {work.subtitle && (
                 <p
-                  className="text-[4vw] md:text-[2.5vw] leading-none font-black uppercase tracking-tight mb-8 transition-opacity group-hover:opacity-60"
+                  className="text-[4vw] md:text-[2.5vw] leading-none font-black uppercase tracking-tight mb-8 transition-colors group-hover:text-[var(--accent)]"
                   style={{ fontFamily: "var(--font-display)", color: "var(--ink-mid)" }}
                 >
                   {work.subtitle}
@@ -104,8 +91,8 @@ export default function Home() {
                   {work.description}
                 </p>
                 <span
-                  className="shrink-0 text-xs tracking-[0.25em] uppercase font-medium underline underline-offset-4 transition-opacity group-hover:opacity-60"
-                  style={{ fontFamily: "var(--font-body)" }}
+                  className="shrink-0 text-xs tracking-[0.25em] uppercase font-medium px-4 py-2 rounded-full transition-colors"
+                  style={{ fontFamily: "var(--font-body)", background: "var(--royal-gold)", color: "var(--coffee-bean)" }}
                 >
                   Read →
                 </span>
