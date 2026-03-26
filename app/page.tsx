@@ -73,14 +73,14 @@ export default function Home() {
             <div className="px-6 md:px-12 py-10 md:py-14">
               {/* Big title */}
               <h2
-                className="text-[8vw] md:text-[6vw] leading-none font-black uppercase tracking-tight mb-1 transition-transform duration-200 origin-left group-hover:scale-[1.02]"
+                className="text-[8vw] md:text-[6vw] leading-none font-bold uppercase tracking-tight mb-1 transition-transform duration-200 origin-left group-hover:scale-[1.02]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {work.title}
               </h2>
               {work.subtitle && (
                 <p
-                  className="text-[4vw] md:text-[2.5vw] leading-none font-black uppercase tracking-tight mb-8 transition-transform duration-200 origin-left group-hover:scale-[1.02]"
+                  className="text-[4vw] md:text-[2.5vw] leading-none font-semibold uppercase tracking-tight mb-8 transition-transform duration-200 origin-left group-hover:scale-[1.02]"
                   style={{ fontFamily: "var(--font-display)", color: "var(--ink-mid)" }}
                 >
                   {work.subtitle}
@@ -136,7 +136,7 @@ export default function Home() {
               style={{ borderColor: "var(--rule)" }}
             >
               <h3
-                className="text-2xl md:text-3xl font-black uppercase leading-tight"
+                className="text-2xl md:text-3xl font-bold uppercase leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {p.title}
