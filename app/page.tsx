@@ -1,3 +1,18 @@
+const canvaProjects = [
+  {
+    title: "Euler Trails & Euler Circuits",
+    href: "https://www.canva.com/design/DAG4Tk74Skw/tmP7nu6uSwCTuSMtCbB9_Q/edit?utm_content=DAG4Tk74Skw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+  },
+  {
+    title: "Structure of Logical Statements",
+    href: "https://www.canva.com/design/DAG7iVbL9m8/vY6BdlL-jt4F0ww_mSNQ5A/edit?utm_content=DAG7iVbL9m8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+  },
+  {
+    title: "Cryptography & Number Theory",
+    href: "https://www.canva.com/design/DAHDkAQUmhI/gfUUdSbleSYWXsp8d4DRxA/edit?utm_content=DAHDkAQUmhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+  },
+];
+
 const works = [
   {
     title: "Ghost Daughters and Bar Girls",
@@ -100,6 +115,41 @@ export default function Home() {
             </div>
           </a>
         ))}
+      </div>
+
+      {/* Discrete Math section */}
+      <div className="px-6 md:px-12 py-14 border-t" style={{ borderColor: "var(--rule)" }}>
+        <p
+          className="text-xs tracking-[0.25em] uppercase mb-8"
+          style={{ fontFamily: "var(--font-body)", color: "var(--ink-mid)" }}
+        >
+          Visual Projects — Discrete Mathematics
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {canvaProjects.map((p) => (
+            <a
+              key={p.title}
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col justify-between gap-6 border rounded-sm p-6 transition-colors hover:border-[var(--ink)]"
+              style={{ borderColor: "var(--rule)" }}
+            >
+              <h3
+                className="text-2xl md:text-3xl font-black uppercase leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                {p.title}
+              </h3>
+              <span
+                className="text-xs tracking-[0.25em] uppercase self-start"
+                style={{ fontFamily: "var(--font-body)", color: "var(--ink-mid)" }}
+              >
+                View on Canva →
+              </span>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
