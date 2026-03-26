@@ -11,7 +11,7 @@
   --ink: var(--coffee-bean);
   --ink-mid: var(--olive-leaf);
   --rule: #a8a8cc;
-  --accent: var(--royal-gold);
+  --accent: var(--coffee-bean);
 }
 
 body {
