@@ -132,7 +132,7 @@ export default function Home() {
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col justify-between gap-6 border rounded-sm p-6 transition-colors hover:border-[var(--ink)]"
+              className="group flex flex-col justify-between gap-6 border rounded-sm p-6 transition-all duration-200 hover:border-[var(--ink)] hover:scale-[1.02]"
               style={{ borderColor: "var(--rule)" }}
             >
               <h3
