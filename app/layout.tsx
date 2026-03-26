@@ -32,6 +32,15 @@ export default function RootLayout({
           <a href="/" className="text-sm tracking-[0.2em] uppercase font-medium">
             Lian Benz
           </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs tracking-[0.2em] uppercase font-medium px-4 py-1.5 rounded-full border transition-colors hover:opacity-70"
+            style={{ borderColor: "var(--rule)", color: "var(--ink-mid)" }}
+          >
+            Resume
+          </a>
         </header>
         <main className="flex-1">{children}</main>
         <footer
