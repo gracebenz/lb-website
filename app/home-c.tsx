@@ -1,57 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { works, canvaProjects } from "./data";
-
-function AnimatedCard({
-  children,
-  delay = 0,
-  className = "",
-}: {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.08 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(28px)",
-        transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+import { AnimatedCard } from "./animated-card";
 
 export default function HomeC() {
   return (
     <div className="px-6 md:px-12 py-14 flex flex-col gap-16">
 
       {/* Papers grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {works.map((work, i) => (
           <AnimatedCard key={i} delay={i * 80}>
             <a
@@ -64,7 +21,7 @@ export default function HomeC() {
               {/* Accent bar */}
               <div className="h-1 w-full" style={{ background: "var(--c-sage)" }} />
 
-              <div className="flex flex-col flex-1 gap-4 p-6">
+              <div className="flex flex-col flex-1 gap-5 p-8">
                 {/* Venue + date */}
                 <p
                   className="text-[10px] tracking-[0.2em] uppercase"
@@ -76,14 +33,14 @@ export default function HomeC() {
                 {/* Title */}
                 <div className="flex-1">
                   <h2
-                    className="text-xl leading-snug font-medium"
+                    className="text-3xl leading-snug font-medium"
                     style={{ fontFamily: "var(--font-cormorant)", color: "var(--ink)" }}
                   >
                     {work.title}
                   </h2>
                   {work.subtitle && (
                     <p
-                      className="text-sm mt-1 italic"
+                      className="text-base mt-1 italic"
                       style={{ fontFamily: "var(--font-cormorant)", color: "var(--ink-mid)" }}
                     >
                       {work.subtitle}
@@ -93,7 +50,7 @@ export default function HomeC() {
 
                 {/* Description */}
                 <p
-                  className="text-xs leading-relaxed line-clamp-3"
+                  className="text-sm leading-relaxed line-clamp-4"
                   style={{ fontFamily: "var(--font-body)", color: "var(--ink-mid)" }}
                 >
                   {work.description}
