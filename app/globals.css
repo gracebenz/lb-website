@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-:root {
+:root,
+[data-theme="a"] {
   --fern: #607744;
   --royal-gold: #f4d35e;
   --lavender: #cfcfea;
@@ -12,6 +13,17 @@
   --ink-mid: var(--olive-leaf);
   --rule: #a8a8cc;
   --accent: var(--coffee-bean);
+}
+
+[data-theme="b"] {
+  --royal-gold: #f5bc1c;
+  --coffee-bean: #1a0800;
+
+  --background: #f5ede0;
+  --ink: #e8431a;
+  --ink-mid: #c73a16;
+  --rule: #e8c4a8;
+  --accent: #f5bc1c;
 }
 
 body {
