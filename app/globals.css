@@ -20,10 +20,15 @@
   --coffee-bean: #1a0800;
 
   --background: #f5ede0;
-  --ink: #e8431a;
-  --ink-mid: #c73a16;
+  --ink: #FF6542;
+  --ink-mid: #d94d2c;
   --rule: #e8c4a8;
   --accent: #f5bc1c;
+}
+
+[data-theme="b"] header,
+[data-theme="b"] footer {
+  font-family: var(--font-poppins) !important;
 }
 
 body {
