@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter, Poppins } from "next/font/google";
+import { Barlow_Condensed, Cormorant_Garamond, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
 import { ThemeToggle } from "./theme-toggle";
@@ -14,6 +14,13 @@ const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
 const poppins = Poppins({
@@ -33,13 +40,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${barlowCondensed.variable} ${inter.variable} ${poppins.variable}`}
+      className={`${barlowCondensed.variable} ${inter.variable} ${poppins.variable} ${cormorantGaramond.variable}`}
       suppressHydrationWarning
     >
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('lb-theme');if(t==='b')document.documentElement.setAttribute('data-theme','b');}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem('lb-theme');if(t==='b'||t==='c')document.documentElement.setAttribute('data-theme',t);}catch(e){}})()`,
           }}
         />
       </head>
