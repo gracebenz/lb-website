@@ -73,6 +73,30 @@
   font-weight: 700;
 }
 
+[data-theme="e"] header a:first-child {
+  color: #8faabf !important;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+[data-theme="e"] header a:nth-child(2) {
+  font-size: 0.625rem;
+}
+
+[data-theme="e"] {
+  --background: #0b213b;
+  --ink: #e0e2db;
+  --ink-mid: #8faabf;
+  --rule: #1e3f5a;
+  --royal-gold: #ffcc33;
+  --coffee-bean: #0b213b;
+  --accent: #d44500;
+
+  --d-card: #122840;
+  --d-orange: #d44500;
+  --d-gold: #ffcc33;
+}
+
 [data-theme="d"] header,
 [data-theme="d"] footer {
   font-family: var(--font-cormorant) !important;
