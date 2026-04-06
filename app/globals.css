@@ -54,6 +54,31 @@
   letter-spacing: 0.04em;
 }
 
+[data-theme="d"] {
+  --background: #0b213b;
+  --ink: #e0e2db;
+  --ink-mid: #8faabf;
+  --rule: #1e3f5a;
+  --royal-gold: #ffcc33;
+  --coffee-bean: #0b213b;
+  --accent: #d44500;
+
+  --d-card: #122840;
+  --d-orange: #d44500;
+  --d-gold: #ffcc33;
+}
+
+[data-theme="d"] header a:first-child {
+  color: #ffcc33;
+  font-weight: 700;
+}
+
+[data-theme="d"] header,
+[data-theme="d"] footer {
+  font-family: var(--font-cormorant) !important;
+  letter-spacing: 0.04em;
+}
+
 body {
   background: var(--background);
   color: var(--ink);

@@ -2,7 +2,7 @@
 
 import { useTheme, type Theme } from "./theme-provider";
 
-const themes: Theme[] = ["a", "b", "c"];
+const themes: Theme[] = ["a", "b", "c", "d"];
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
