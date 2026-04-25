@@ -69,6 +69,15 @@ export default function RootLayout({
               >
                 Resume
               </a>
+              <a
+                href="https://www.linkedin.com/in/lian-benz-4644992a9/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs tracking-[0.2em] uppercase font-medium px-4 py-1.5 rounded-full border transition-colors hover:opacity-70"
+                style={{ borderColor: "var(--rule)", color: "var(--ink-mid)" }}
+              >
+                LinkedIn
+              </a>
             </div>
             <ThemeToggle />
           </header>

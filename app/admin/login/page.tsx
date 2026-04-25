@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -19,7 +17,7 @@ export default function AdminLogin() {
       body: JSON.stringify({ password }),
     });
     if (res.ok) {
-      router.push("/admin");
+      window.location.href = "/admin/works";
     } else {
       setError("Incorrect password.");
     }
