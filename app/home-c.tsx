@@ -1,9 +1,12 @@
 "use client";
 
-import { works, canvaProjects } from "./data";
 import { AnimatedCard } from "./animated-card";
+import type { Work } from "@/lib/works";
+import type { CanvaProject } from "@/lib/canva";
 
-export default function HomeC() {
+type Props = { works: Work[]; canvaProjects: CanvaProject[] };
+
+export default function HomeC({ works, canvaProjects }: Props) {
   return (
     <div className="px-6 md:px-12 py-14 flex flex-col gap-16">
 
@@ -12,7 +15,7 @@ export default function HomeC() {
         {works.map((work, i) => (
           <AnimatedCard key={i} delay={i * 80}>
             <a
-              href={work.href}
+              href={work.href ?? "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col h-full rounded-lg overflow-hidden border transition-shadow duration-300 hover:shadow-lg"
@@ -62,7 +65,7 @@ export default function HomeC() {
                     className="text-[10px] tracking-widest uppercase"
                     style={{ fontFamily: "var(--font-body)", color: "var(--ink-mid)" }}
                   >
-                    {work.author.split("&")[0].trim()}
+                    {work.author?.split("&")[0]?.trim()}
                   </span>
                   <span
                     className="text-[10px] font-medium tracking-wider uppercase transition-colors group-hover:opacity-60"

@@ -1,17 +1,8 @@
-"use client";
+import { getWorks } from "@/lib/works";
+import { getCanvaProjects } from "@/lib/canva";
+import HomeClient from "./home-client";
 
-import { useTheme } from "./theme-provider";
-import HomeA from "./home-a";
-import HomeB from "./home-b";
-import HomeC from "./home-c";
-import HomeD from "./home-d";
-import HomeE from "./home-e";
-
-export default function Home() {
-  const { theme } = useTheme();
-  if (theme === "b") return <HomeB />;
-  if (theme === "c") return <HomeC />;
-  if (theme === "d") return <HomeD />;
-  if (theme === "e") return <HomeE />;
-  return <HomeA />;
+export default async function Page() {
+  const [works, canvaProjects] = await Promise.all([getWorks(), getCanvaProjects()]);
+  return <HomeClient works={works} canvaProjects={canvaProjects} />;
 }

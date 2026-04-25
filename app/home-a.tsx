@@ -1,7 +1,10 @@
-import { works, canvaProjects } from "./data";
 import { AnimatedCard } from "./animated-card";
+import type { Work } from "@/lib/works";
+import type { CanvaProject } from "@/lib/canva";
 
-export default function HomeA() {
+type Props = { works: Work[]; canvaProjects: CanvaProject[] };
+
+export default function HomeA({ works, canvaProjects }: Props) {
   return (
     <div>
       {/* Works list */}
@@ -9,7 +12,7 @@ export default function HomeA() {
         {works.map((work, i) => (
           <AnimatedCard key={i} delay={i * 80}>
             <a
-              href={work.href}
+              href={work.href ?? "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="block border-b group"

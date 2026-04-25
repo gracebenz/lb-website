@@ -1,7 +1,10 @@
-import { works, canvaProjects } from "./data";
 import { AnimatedCard } from "./animated-card";
+import type { Work } from "@/lib/works";
+import type { CanvaProject } from "@/lib/canva";
 
-export default function HomeB() {
+type Props = { works: Work[]; canvaProjects: CanvaProject[] };
+
+export default function HomeB({ works, canvaProjects }: Props) {
   return (
     <div className="px-4 md:px-8 py-6 flex flex-col gap-4">
 
@@ -9,7 +12,7 @@ export default function HomeB() {
       {works.map((work, i) => (
         <AnimatedCard key={i} delay={i * 80}>
           <a
-            href={work.href}
+            href={work.href ?? "#"}
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-3xl p-8 md:p-12 flex flex-col gap-5 transition-transform duration-200 hover:scale-[1.01]"
