@@ -79,7 +79,8 @@
   font-size: 0.75rem;
 }
 
-[data-theme="e"] header a:nth-child(2) {
+[data-theme="e"] header a:nth-child(2),
+[data-theme="e"] header a:nth-child(3) {
   font-size: 0.625rem;
 }
 

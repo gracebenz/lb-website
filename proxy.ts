@@ -8,7 +8,7 @@ export const config = {
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (pathname === "/admin/login") {
+  if (pathname === "/admin/login" || pathname === "/admin/logged-out") {
     return NextResponse.next();
   }
 
