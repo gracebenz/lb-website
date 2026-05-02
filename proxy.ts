@@ -7,13 +7,16 @@ export const config = {
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const isAuthenticated = request.cookies.get("lb-admin")?.value === "1";
 
   if (pathname === "/admin/login" || pathname === "/admin/logged-out") {
+    if (isAuthenticated) {
+      return NextResponse.redirect(new URL("/admin/works", request.url));
+    }
     return NextResponse.next();
   }
 
-  const auth = request.cookies.get("lb-admin");
-  if (auth?.value !== "1") {
+  if (!isAuthenticated) {
     return NextResponse.redirect(new URL("/admin/login", request.url));
   }
 
