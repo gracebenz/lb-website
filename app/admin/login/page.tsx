@@ -44,7 +44,7 @@ export default function AdminLogin() {
           type="submit"
           disabled={loading}
           className="px-4 py-3 text-sm font-medium uppercase tracking-widest transition-opacity hover:opacity-70 disabled:opacity-40"
-          style={{ background: "var(--ink)", color: "var(--background)", fontFamily: "var(--font-body)" }}
+          style={{ background: "var(--d-gold)", color: "var(--coffee-bean)", fontFamily: "var(--font-body)" }}
         >
           {loading ? "..." : "Enter"}
         </button>

@@ -75,7 +75,7 @@ export default function CanvaAdmin({ initialProjects }: Props) {
         <p className="text-xs tracking-widest uppercase mb-2" style={{ color: "var(--ink-mid)", fontFamily: "var(--font-body)" }}>Add Project</p>
         <input required placeholder="Title" className={fieldClass} style={fieldStyle} value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
         <input required placeholder="Canva URL" className={fieldClass} style={fieldStyle} value={form.href} onChange={(e) => setForm({ ...form, href: e.target.value })} />
-        <button type="submit" disabled={saving} className="self-start px-5 py-2 text-xs font-medium uppercase tracking-widest transition-opacity hover:opacity-70 disabled:opacity-40" style={{ background: "var(--ink)", color: "var(--background)", fontFamily: "var(--font-body)" }}>
+        <button type="submit" disabled={saving} className="self-start px-5 py-2 text-xs font-medium uppercase tracking-widest transition-opacity hover:opacity-70 disabled:opacity-40" style={{ background: "var(--d-gold)", color: "var(--coffee-bean)", fontFamily: "var(--font-body)" }}>
           {saving ? "Saving..." : "Add"}
         </button>
       </form>
@@ -98,7 +98,7 @@ export default function CanvaAdmin({ initialProjects }: Props) {
                 <input placeholder="Title" className={fieldClass} style={fieldStyle} value={editForm.title} onChange={(e) => setEditForm({ ...editForm, title: e.target.value })} />
                 <input placeholder="Canva URL" className={fieldClass} style={fieldStyle} value={editForm.href} onChange={(e) => setEditForm({ ...editForm, href: e.target.value })} />
                 <div className="flex gap-3 mt-1">
-                  <button onClick={() => handleEdit(project.id)} disabled={saving} className="text-xs uppercase tracking-widest px-4 py-1.5 hover:opacity-70 disabled:opacity-40" style={{ background: "var(--ink)", color: "var(--background)" }}>Save</button>
+                  <button onClick={() => handleEdit(project.id)} disabled={saving} className="text-xs uppercase tracking-widest px-4 py-1.5 hover:opacity-70 disabled:opacity-40" style={{ background: "var(--d-gold)", color: "var(--coffee-bean)" }}>Save</button>
                   <button onClick={() => setEditId(null)} className="text-xs uppercase tracking-widest px-4 py-1.5 hover:opacity-70" style={{ border: "1px solid var(--rule)" }}>Cancel</button>
                 </div>
               </div>

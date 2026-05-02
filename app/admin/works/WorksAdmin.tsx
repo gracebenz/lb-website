@@ -101,6 +101,7 @@ export default function WorksAdmin({ initialWorks }: Props) {
   const fieldClass = "border px-3 py-2 text-sm outline-none w-full";
   const fieldStyle = { borderColor: "var(--rule)", background: "transparent", color: "var(--ink)", fontFamily: "var(--font-body)" };
   const btnPrimary = "px-5 py-2.5 text-xs font-semibold uppercase tracking-widest transition-opacity hover:opacity-70 disabled:opacity-40";
+  const btnPrimaryStyle = { background: "var(--d-gold)", color: "var(--coffee-bean)", fontFamily: "var(--font-body)" };
   const btnSecondary = "px-5 py-2.5 text-xs font-semibold uppercase tracking-widest border transition-opacity hover:opacity-70";
 
   return (
@@ -113,7 +114,7 @@ export default function WorksAdmin({ initialWorks }: Props) {
           <button
             onClick={() => setAdding(true)}
             className={btnPrimary}
-            style={{ background: "var(--ink)", color: "var(--background)", fontFamily: "var(--font-body)" }}
+            style={btnPrimaryStyle}
           >
             + Add Work
           </button>
@@ -169,7 +170,7 @@ export default function WorksAdmin({ initialWorks }: Props) {
               type="submit"
               disabled={saving || (!form.title && !pdfFile)}
               className={btnPrimary}
-              style={{ background: "var(--ink)", color: "var(--background)", fontFamily: "var(--font-body)" }}
+              style={btnPrimaryStyle}
             >
               {saving ? "Saving..." : "Save Work"}
             </button>
@@ -234,7 +235,7 @@ export default function WorksAdmin({ initialWorks }: Props) {
                 <textarea placeholder="Description" rows={3} className={fieldClass} style={fieldStyle} value={editForm.description} onChange={(e) => setEditForm({ ...editForm, description: e.target.value })} />
                 <input placeholder="Link URL" className={fieldClass} style={fieldStyle} value={editForm.href} onChange={(e) => setEditForm({ ...editForm, href: e.target.value })} />
                 <div className="flex gap-3">
-                  <button onClick={() => handleEdit(work.id)} disabled={saving} className={btnPrimary} style={{ background: "var(--ink)", color: "var(--background)", fontFamily: "var(--font-body)" }}>
+                  <button onClick={() => handleEdit(work.id)} disabled={saving} className={btnPrimary} style={btnPrimaryStyle}>
                     {saving ? "Saving..." : "Save"}
                   </button>
                   <button onClick={() => { setEditId(null); setEditPdfFile(null); }} className={btnSecondary} style={{ borderColor: "var(--rule)", fontFamily: "var(--font-body)" }}>
